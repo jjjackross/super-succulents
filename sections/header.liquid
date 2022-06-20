@@ -52,7 +52,7 @@
             {% if shop.customer_accounts_enabled %}    
                 <div class="flex items-center">
                     {% if customer %}
-                        <a href="{{ routes.account_url }}" class="hover:bg-green-700 hover:text-white rounded-mdp-1 mx-1/2 active:bg-green-900 mx-2 text-base font-normal">Account</a>
+                        <a href="{{ routes.account_url }}" class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 ml-2 text-base font-normal">Account</a>
                         {{ 'Log Out' | customer_logout_link | replace: '<a', '<a class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 ml-2 text-base font-normal"' }}
                     {% else %}
                         {{ 'Log In' | customer_login_link | replace: '<a', '<a class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 mx-2 text-base font-normal border-2 border-white hover:border-green-700 border-2 border-white hover:border-green-700 active:border-green-900"' }}
@@ -112,7 +112,7 @@
                 {% if shop.customer_accounts_enabled %}    
                     <div class="flex items-center justify-around pt-2 border-t mt-2">
                         {% if customer %}
-                            <a href="{{ routes.account_url }}" class="hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 text-base font-normal">Account</a>
+                            <a href="{{ routes.account_url }}" class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 text-base font-normal">Account</a>
                             {{ 'Log Out' | customer_logout_link | replace: '<a', '<a class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 text-base font-normal"' }}
                         {% else %}
                             {{ 'Log In' | customer_login_link | replace: '<a', '<a class="text-green-700 hover:bg-green-700 hover:text-white rounded-md p-1 mx-1/2 active:bg-green-900 text-base font-normal active:border-green-900 hover:border-green-700 border-2 border-white"' }}

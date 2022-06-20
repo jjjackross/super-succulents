@@ -1,0 +1,79 @@
+<div class="container mx-auto">
+    {% paginate search.results by 6 %}
+        <h1 class="text-xl my-4 text-center">Search Results</h1>
+
+        <div class="flex justify-center items-center">
+            <form action="{{ routes.search_url }}" method="get" class="border border-green-700 flex rounded-full">
+                <input 
+                    type="search" 
+                    name="q" 
+                    placeholder="Search" 
+                    value="{{ search.terms | escape }}" 
+                    class="px-4 py-2 w-60 md:w-80 border border-white rounded-full focus:outline-none"
+                >
+
+                <button type="submit" class="bg-green-700 rounded-full hover:bg-green-900 text-white border px-4 active:font-medium">Search</button>
+            </form>
+        </div>
+        {% if search.performed %}
+            {% if search.results.size > 0 %}
+                <div class="max-w-6xl mx-auto">
+                    <p class="text-gray-500 text-center my-10">{{ search.results.size }} results for the search term: {{ search.terms | escape }}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {% for item in search.results %}
+                            {% case item.object_type %}
+                                {% when 'product' %}
+                                    {% render 'product-card', product_product: item %}
+                                {% when 'article' %}
+                                    <div class="w-full py-6 px-3">
+                                        <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
+                                            {% if item.image %}
+                                                <a href="{{ item.url }}">
+                                                    <img class="w-full h-80 object-cover" src="{{ item.image | img_url: 'large' }}" alt="{{ item.image.alt }}" />
+                                                </a>
+                                            {% else %}
+                                                <div class="bg-green-900">
+                                                    <a href="{{ item.url }}">{{ 'image' | placeholder_svg_tag: 'w-full h-80 object-cover invert' }}</a>
+                                                </div>
+                                            {% endif %}
+
+                                            <div class="p-4">
+                                                <a href="{{ item.url }}" class="hover:underline">
+                                                    <h1 class="text-xl font-medium my-4">{{ item.title }}</h1>
+                                                </a>
+                                                {% if item.excerpt.size > 0 %}
+                                                    <p>{{ item.excerpt | strip_html | truncatewords: 15 }}</p>
+                                                {% else %}
+                                                    <p>{{ item.content | strip_html | truncatewords: 15 }}</p>
+                                                {% endif %}
+                                                <a href="{{ item.url }}" class="font-medium text-green-700 hover:text-green-900 my-4 block">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% when 'page' %}
+                                    <div class="w-full py-6 px-3">
+                                        <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
+                                            <div class="p-4">
+                                                <a href="{{ item.url }}" class="hover:underline">
+                                                    <h1 class="text-xl font-medium my-4">{{ item.title }}</h1>
+                                                </a>
+                                                <p>{{ item.content | strip_html | truncatewords: 15 }}</p>
+                                                <a href="{{ item.url }}" class="font-medium text-green-700 hover:text-green-900 my-4 block">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                </div>         
+            {% else %}
+                <div class="text-center my-4">
+                    <p class="pt-4">No results found for the search term: {{ search.terms | escape }}</p>
+                    <p>Try to use a different keyword.</p>
+                </div>
+            {% endif %}
+        {% endif %}
+    
+        {% render 'pagination', pagination: paginate %}
+    {% endpaginate %}
+</div>

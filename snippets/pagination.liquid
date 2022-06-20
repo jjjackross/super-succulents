@@ -1,0 +1,17 @@
+{% if pagination.pages > 0 %}
+    <nav role="navigation" class="flex justify-center my-8">
+        {% if pagination.previous %}
+            <a href="{{ pagination.previous.url }}" class="border border-green-700 hover:bg-green-700 hover:text-white px-4 py-1 flex justify-center items-center md:px-8 md:py-3 mx-1 rounded-full font-medium active:border-green-900 active:bg-green-900 text-green-700 truncate">{{ pagination.previous.title }}</a>
+        {% endif %}
+        {% for part in pagination.parts %}
+            {% if part.is_link %}    
+                <a href="{{ part.url }}" class="border border-green-700 hover:bg-green-700 hover:text-white px-4 py-1 flex justify-center items-center md:px-8 md:py-3 mx-1 rounded-full font-medium text-green-700 active:border-green-900 active:bg-green-900">{{ part.title }}</a>
+            {% else %}
+                <span class="border border-green-900 bg-green-900 text-white px-4 py-1 flex justify-center items-center md:px-8 md:py-3 mx-1 rounded-full font-medium">{{ part.title }}</span>
+            {% endif %}
+        {% endfor %}
+        {% if pagination.next %}
+            <a href="{{ pagination.next.url }}" class="border border-green-700 hover:bg-green-700 hover:text-white px-4 py-1 flex justify-center items-center md:px-8 md:py-3 mx-1 rounded-full font-medium active:border-green-900 active:bg-green-900 text-green-700 truncate">{{ pagination.next.title }}</a>
+        {% endif %}
+    </nav>
+{% endif %}

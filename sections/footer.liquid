@@ -1,0 +1,41 @@
+<footer class="min-h-40 bg-green-900 p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+        <div class="text-white">
+            <h3 class="text-lg font-medium">{{ section.settings.footer_menu_title }}</h3>
+            {% for link in section.settings.footer_menu.links %}
+                <a class="block hover:underline" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg font-medium">{{ section.settings.footer_address_title }}</h3>
+            {{ shop.name }}
+            {{ shop.address | format_address }}
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+        "type": "text",
+        "id": "footer_address_title",
+        "default": "Address",
+        "label": "Address Title"
+    },
+    {
+        "type": "text",
+        "id": "footer_menu_title",
+        "default": "Links",
+        "label": "Footer Menu Title"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "default": "footer",
+      "label": "Footer Navigation Menu"
+    }
+  ]
+}
+{% endschema %}

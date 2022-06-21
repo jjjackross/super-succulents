@@ -39,12 +39,14 @@
     "2-image-banner": {
       "type": "2-image-banner",
       "settings": {
-        "image_left_title": "Image Left Title",
+        "image_left_title": "Shop Our Aloe Collection",
         "button_left_text": "Shop Now",
-        "button_left_link": "",
-        "image_right_title": "Image Right Title",
+        "button_left_link": "shopify:\/\/collections\/aloes",
+        "image_left": "shopify:\/\/shop_images\/pexels-laker-6156431_1.jpg",
+        "image_right_title": "Buy a Mystery Plant",
         "button_right_text": "Shop Now",
-        "button_right_link": ""
+        "button_right_link": "shopify:\/\/collections\/mystery-plants",
+        "image_right": "shopify:\/\/shop_images\/pexels-eberhard-grossgasteiger-4406292.jpg"
       }
     },
     "h2-textarea": {

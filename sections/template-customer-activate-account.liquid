@@ -1,0 +1,47 @@
+<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <h1 class="mt-6 text-center text-3xl font-medium">Activate account</h1>
+            <p class="mt-4 text-center">Create your password to activate your account</p>
+        </div>
+
+        <div>
+            {% form 'activate_customer_password', class: 'space-y-4' %}
+                {% if form.errors %}
+                    <div class="relative border border-red-700 bg-red-100 text-red-700 px-4 py-3" role="alert">
+                        <strong class="font-bold">Error!</strong>
+                        <span class="block sm:inline">
+                            {{ form.errors | default_errors }}
+                        </span>
+                    </div>
+                {% endif %}
+                <div>
+                    <label for="password" class="uppercase text-gray-500 text-xs font-medium mb-2">Password</label>
+                    <input
+                        type="password"
+                        name="customer[password]"
+                        id="password"
+                        class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none rounded-md border-green-700"
+                        autocomplete="new-password"
+                    >
+                </div>
+
+                <div>
+                    <label for="confirm_password" class="uppercase text-gray-500 text-xs font-medium mb-2">Confirm password</label>
+                    <input
+                        type="password"
+                        name="customer[password_confirmation]"
+                        id="confirm_password"
+                        class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none rounded-md border-green-700"
+                        autocomplete="new-password"
+                    >
+                </div>
+
+                <div class="block md:flex">
+                    <button type="submit" class="w-full cursor-pointer px-4 py-2 border bg-green-700 border-green-700 rounded-lg text-base font-medium text-white hover:bg-green-900 hover:text-white hover:border-green-900 mr-2">Activate account</button>
+                    <button type="submit" name="decline" class="w-full p-3 border border-green-700 text-green-700 font-medium hover:bg-green-700 hover:text-white rounded-lg active:bg-green-900 active:border-green-900">Decline invitation</button>
+                </div>
+            {% endform %}
+        </div>
+    </div>
+</div>

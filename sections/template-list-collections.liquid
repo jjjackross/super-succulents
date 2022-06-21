@@ -9,13 +9,15 @@
                         <div class="shadow-lg bg-white overflow-hidden rounded-lg">
                             <a href="{{ collection.url }}">
                                 <div class="h-80 overflow-hidden">
-                                    {% if collection.featured_image != blank %}
-                                        {% assign collection_image = collection.featured_image %}
-                                    {% elsif collection.products.first.image != blank %}
-                                        {% assign collection_image = collection.products.first.image %}
-                                    {% else %}
-                                        {% assign collection_image = blank %}
-                                    {% endif %}
+                                    {% liquid
+                                        if collection.featured_image != blank
+                                            assign collection_image = collection.featured_image
+                                        elsif collection.products.first.image != blank
+                                            assign collection_image = collection.products.first.image
+                                        else
+                                            assign collection_image = blank
+                                        endif
+                                    %}
 
                                     {% if collection_image != blank %}    
                                         <img

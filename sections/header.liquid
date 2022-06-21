@@ -98,7 +98,7 @@
 
                                 <div x-show="{{ mobile_link_handle }}">
                                     {% for childlink in link.links %}
-                                        <a href="" class="flex items-center pl-6 text-green-700 hover:text-green-900 py-2 text-base font-normal focus:outline-none flex items-center">{{ childlink.title }}</a>
+                                        <a href="{{ childlink.url }}" class="flex items-center pl-6 text-green-700 hover:text-green-900 py-2 text-base font-normal focus:outline-none flex items-center">{{ childlink.title }}</a>
                                     {% endfor %}
                                 </div>
                             </div>

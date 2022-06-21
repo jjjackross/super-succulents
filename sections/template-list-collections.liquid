@@ -17,7 +17,7 @@
                                         {% assign collection_image = blank %}
                                     {% endif %}
 
-                                    {% if collection_image == blank %}    
+                                    {% if collection_image != blank %}    
                                         <img
                                             class="w-full h-full object-cover"
                                             src="{{ collection_image | img_url: 'large' }}"

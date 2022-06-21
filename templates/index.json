@@ -16,20 +16,42 @@
         "number_of_products_to_show": 4
       }
     },
-    "h2-textarea": {
-      "type": "h2-textarea"
+    "text-image": {
+      "type": "text-image",
+      "settings": {
+        "image_h3": "Heading goes here",
+        "image_content": "Content goes here.",
+        "linked_page": "",
+        "button_text": "Read More"
+      }
     },
     "featured-articles": {
       "type": "featured-articles",
       "settings": {
-        "title": "Featured Articles"
+        "title": "Featured Articles",
+        "article_1": "news\/3-plants-that-increase-oxygen-flow-in-your-home",
+        "article_2": "news\/how-to-tell-if-your-succulent-is-dying",
+        "article_3": "news\/5-reasons-you-need-succulents-in-your-home-office",
+        "article_4": "news\/how-different-succulents-affect-your-mood"
       }
     },
-    "text-image": {
-      "type": "text-image"
-    },
     "2-image-banner": {
-      "type": "2-image-banner"
+      "type": "2-image-banner",
+      "settings": {
+        "image_left_title": "Image Left Title",
+        "button_left_text": "Shop Now",
+        "button_left_link": "",
+        "image_right_title": "Image Right Title",
+        "button_right_text": "Read More",
+        "button_right_link": ""
+      }
+    },
+    "h2-textarea": {
+      "type": "h2-textarea",
+      "settings": {
+        "h2_title": "Title goes here.",
+        "p_textarea": "Content goes here."
+      }
     }
   },
   "order": [

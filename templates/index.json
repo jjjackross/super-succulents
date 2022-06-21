@@ -15,10 +15,29 @@
         "featured_collection": "all",
         "number_of_products_to_show": 4
       }
+    },
+    "h2-textarea": {
+      "type": "h2-textarea"
+    },
+    "featured-articles": {
+      "type": "featured-articles",
+      "settings": {
+        "title": "Featured Articles"
+      }
+    },
+    "text-image": {
+      "type": "text-image"
+    },
+    "2-image-banner": {
+      "type": "2-image-banner"
     }
   },
   "order": [
     "image-banner",
-    "featured-collection"
+    "featured-collection",
+    "text-image",
+    "featured-articles",
+    "2-image-banner",
+    "h2-textarea"
   ]
 }

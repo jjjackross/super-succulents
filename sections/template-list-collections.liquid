@@ -11,15 +11,23 @@
                                 <div class="h-80 overflow-hidden">
                                     {% if collection.featured_image != blank %}
                                         {% assign collection_image = collection.featured_image %}
+                                    {% elsif collection.products.first.image != blank %}
+                                        {% assign collection_image = collection.products.first.image %}
                                     {% else %}
-                                        {% assign collection_image = collection.products.first.image %}        
+                                        {% assign collection_image = blank %}
                                     {% endif %}
-            
-                                    <img
-                                    class="w-full h-full object-cover"
-                                    src="{{ collection_image | img_url: 'large' }}"
-                                    alt="{{ collection.title }}"
-                                    >
+
+                                    {% if collection_image == blank %}    
+                                        <img
+                                            class="w-full h-full object-cover"
+                                            src="{{ collection_image | img_url: 'large' }}"
+                                            alt="{{ collection.title }}"
+                                        >
+                                    {% else %}
+                                        <div class="bg-green-900 w-full h-full">
+                                            {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover invert' }}
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </a>
                             

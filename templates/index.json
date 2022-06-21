@@ -16,20 +16,43 @@
         "number_of_products_to_show": 4
       }
     },
-    "h2-textarea": {
-      "type": "h2-textarea"
+    "text-image": {
+      "type": "text-image",
+      "settings": {
+        "image_h3": "Succulents backed by research...",
+        "image_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas. Urna neque viverra justo nec ultrices dui sapien eget mi.",
+        "linked_page": "",
+        "button_text": "Read More",
+        "side_image": "shopify:\/\/shop_images\/pexels-ron-lach-10181420_1.jpg"
+      }
     },
     "featured-articles": {
       "type": "featured-articles",
       "settings": {
-        "title": "Featured Articles"
+        "title": "Featured Articles",
+        "article_1": "news\/3-plants-that-increase-oxygen-flow-in-your-home",
+        "article_2": "news\/how-to-tell-if-your-succulent-is-dying",
+        "article_3": "news\/5-reasons-you-need-succulents-in-your-home-office",
+        "article_4": "news\/how-different-succulents-affect-your-mood"
       }
     },
-    "text-image": {
-      "type": "text-image"
-    },
     "2-image-banner": {
-      "type": "2-image-banner"
+      "type": "2-image-banner",
+      "settings": {
+        "image_left_title": "Image Left Title",
+        "button_left_text": "Shop Now",
+        "button_left_link": "",
+        "image_right_title": "Image Right Title",
+        "button_right_text": "Shop Now",
+        "button_right_link": ""
+      }
+    },
+    "h2-textarea": {
+      "type": "h2-textarea",
+      "settings": {
+        "h2_title": "What Makes Our Succulents Better",
+        "p_textarea": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et egestas quis ipsum suspendisse ultrices gravida. Ac auctor augue mauris augue neque. Gravida neque convallis a cras semper auctor neque vitae. A cras semper auctor neque vitae tempus quam. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Lectus urna duis convallis convallis tellus id interdum velit. Ut tortor pretium viverra suspendisse potenti nullam ac. Lacinia quis vel eros donec ac. Proin fermentum leo vel orci porta non pulvinar neque. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Quam id leo in vitae turpis massa sed. Diam quis enim lobortis scelerisque fermentum dui faucibus."
+      }
     }
   },
   "order": [

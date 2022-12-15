@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center my-8">
   <div class="px-3 max-w-6xl w-full mx-auto">
-    <h2 class="text-2xl font-medium mb-2">{{ section.settings.h2_title }}</h2>
+    <h2 class="text-4xl font-medium mb-2 text-green-700">{{ section.settings.h2_title }}</h2>
     <p>{{ section.settings.p_textarea }}</p>
   </div>
 </div>
@@ -8,26 +8,25 @@
 
 
 {% schema %}
-{
+  {
     "name": "H2 & Textarea",
     "settings": [
-        {
-          "type": "text",
-          "id": "h2_title",
-          "default": "Title goes here.",
-          "label": "H2 Title"
-        },
-        {
-          "type": "textarea",
-          "id": "p_textarea",
-          "default": "Content goes here.",
-          "label": "Textarea"
-        }
+      {
+        "type": "text",
+        "id": "h2_title",
+        "default": "Title goes here.",
+        "label": "H2 Title"
+      }, {
+        "type": "textarea",
+        "id": "p_textarea",
+        "default": "Content goes here.",
+        "label": "Textarea"
+      }
     ],
     "presets": [
       {
         "name": "H2 & Textarea"
       }
     ]
-}
+  }
 {% endschema %}

@@ -44,7 +44,7 @@ class PredictiveSearch extends HTMLElement {
     }
   
     open() {
-      this.predictiveSearchResults.style.display = 'block';
+      this.predictiveSearchResults.style.display = 'absolute';
     }
   
     close() {
